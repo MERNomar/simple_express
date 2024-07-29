@@ -6,6 +6,7 @@ const getAllOrders = (req, res) => {
 const postOrder = (req, res) => {
   const rando = Math.floor(Math.random() * 9999);
   console.log({ tracking_number: rando });
+  console.log(req.body);
   res.json({ tracking_number: rando }).status(200);
 };
 
