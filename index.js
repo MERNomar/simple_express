@@ -1,14 +1,16 @@
-const express = require("express");
+import express from "express";
+import orderRoutes from "./src/routes/orderRoutes.js";
+import "dotenv/config.js";
+//const cors = require("cors");
+
 const app = express();
-const cors = require("cors");
-
-const orderRoutes = require("./src/routes/orderRoutes");
-
 app.use(express.json());
-app.use(cors());
+
+const PORT = process.env.PORT;
+//app.use(cors());
 
 app.use("/orders", orderRoutes);
 
-app.listen(3000, () => {
-  console.log("everytihng is up and running");
+app.listen(PORT, () => {
+  console.log(`Your server is running on port http://localhost:${PORT}`);
 });

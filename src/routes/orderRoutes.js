@@ -1,10 +1,7 @@
-const express = require("express");
+import express from "express";
+import { getAllOrders } from "../controllers/orderController.js";
 const app = express();
-
-const { getAllOrders, postOrder } = require("../controllers/orderController");
 
 app.get("/", getAllOrders);
 
-app.post("/", postOrder);
-
-module.exports = app;
+export default app;
